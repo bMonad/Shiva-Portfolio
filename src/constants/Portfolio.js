@@ -22,8 +22,8 @@ export const portfolioConstants = [
         pTitle: "UIQuests",
         description: "Description for Project 1",
         demoLink: "https://currency-convertor-one-kappa.vercel.app/",
-        repoLink: "https://github.com/bMonad/UIQuests",
-        more: "https://github.com/bMonad/UIQuests"
+        repoLink: "https://github.com/bMonad/UIQuest",
+        more: "https://github.com/bMonad/UIQuest"
       },
     ]
   }

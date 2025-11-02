@@ -1,0 +1,11 @@
+{
+  "projects": {
+    "default": "me-shivansh-singh",
+    "staging": "me-shivansh-singh"
+  },
+  "targets": {},
+  "etags": {},
+  "hosting": {
+    "site": "me-shivansh-singh"
+  }
+}
