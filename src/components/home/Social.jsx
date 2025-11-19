@@ -3,7 +3,7 @@ import leetcode from '../../assets/leetcode.jpg'
 const Social = () => {
   return (
     <div className='home__social' >
-      <a href="https://www.linkedin.com/in/shiva1706/" target="_blank" rel="noopener noreferrer" className='home__social-icon'>
+      <a href="https://www.linkedin.com/in/shivanshsingh1706/" target="_blank" rel="noopener noreferrer" className='home__social-icon'>
         <i className="uil uil-linkedin-alt"></i>
       </a>
       <a href="https://github.com/bMonad" target="_blank" rel="noopener noreferrer" className='home__social-icon'>

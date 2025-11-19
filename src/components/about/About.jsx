@@ -4,6 +4,7 @@ import CV from '../../assets/Shivansh_Singh_Resume.pdf'
 import Files from '../../assets/files.svg'
 import Info from './Info'
 import { useMemo, useState } from 'react'
+import SEO from '../SEO'
 
 
 const TABS = [
@@ -30,24 +31,33 @@ const About = () => {
   ), [page]);
 
   return (
-    <section className='about section' id='about'>
-      <h2 className='section__title'>About Me</h2>
-      <span className='section__subtitle container'>
-        I am a passionate web developer with experience in building dynamic and responsive web applications.I enjoy turning complex problems into simple, beautiful, and intuitive designs.
-      </span>
+    <>
+      <SEO
+        title="About Me"
+        description="Frontend Developer — portfolio of SHIVANSH SINGH"
+        url="https://me-shivansh-singh.web.app/"
+        image="https://me-shivansh-singh.web.app/default-og.png"
+        keywords="frontend developer, react, javascript, shivansh singh"
+      />
+      <section className='about section' id='about'>
+        <h2 className='section__title'>About Me</h2>
+        <span className='section__subtitle container'>
+          I am a passionate web developer with experience in building dynamic and responsive web applications.I enjoy turning complex problems into simple, beautiful, and intuitive designs.
+        </span>
 
-      <div className="about__tabs">
-        {tabButtons}
-      </div>
+        <div className="about__tabs">
+          {tabButtons}
+        </div>
 
-      <div className='about__container container'>
-        <Info page={page} />
-      </div>
-      <a download='' href={CV} className='button button--flex'>
-        Download CV
-        <img src={Files} alt='Files' style={{ marginLeft: '0.1rem' }} />
-      </a>
-    </section>
+        <div className='about__container container'>
+          <Info page={page} />
+        </div>
+        <a download='' href={CV} className='button button--flex'>
+          Download CV
+          <img src={Files} alt='Files' style={{ marginLeft: '0.1rem' }} />
+        </a>
+      </section>
+    </>
   )
 }
 

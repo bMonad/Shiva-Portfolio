@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap (update to your real URL)
+Sitemap: https://me-shivansh-singh.web.app/sitemap.xml
+
+# Optional: block internal/admin/staging paths
+Disallow: /admin
+Disallow: /staging
