@@ -14,7 +14,6 @@ const Portfolio = () => {
   return (
     <>
       <SEO
-        title="Portfolio"
         description="Frontend Developer — portfolio of SHIVANSH SINGH"
         url="https://me-shivansh-singh.web.app/"
         image="https://me-shivansh-singh.web.app/default-og.png"

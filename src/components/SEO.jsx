@@ -2,7 +2,6 @@ import React from 'react'
 import { Helmet } from 'react-helmet-async'
 
 export default function SEO({
-  title,
   description,
   url,
   image,
@@ -12,8 +11,8 @@ export default function SEO({
 }) {
   const siteName = 'SHIVANSH SINGH — Software Engineer'
   const canonical = url || 'https://me-shivansh-singh.web.app/'
-  const metaTitle = title ? `${title} | ${siteName}` : siteName
-  const metaDescription = description || 'Software Engineer portfolio'
+  const metaTitle = siteName
+  const metaDescription = description || 'SHIVANSH SINGH — Software Engineer portfolio'
   const metaImage = image || 'https://me-shivansh-singh.web.app/default-og.png'
   const metaKeywords = (keywords || 'software,engineer,frontend,developer,react,portfolio,javascript,web,website').split(',').map(s => s.trim()).join(', ')
   const robotsContent = noIndex ? 'noindex, nofollow' : 'index, follow'

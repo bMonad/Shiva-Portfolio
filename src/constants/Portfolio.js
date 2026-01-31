@@ -19,8 +19,8 @@ export const portfolioConstants = [
     projects: [
       {
         id: 2,
-        pTitle: "UIQuests",
-        description: "Description for Project 1",
+        pTitle: "UIQuest",
+        description: "A set of React.js  mini projects designed to sharpen problem‑solving, logical thinking, and practical frontend skills through hands‑on coding challenges.",
         demoLink: "https://currency-convertor-one-kappa.vercel.app/",
         repoLink: "https://github.com/bMonad/UIQuest",
         more: "https://github.com/bMonad/UIQuest"

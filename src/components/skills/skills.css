@@ -13,7 +13,9 @@
 }
 
 .skills__content:hover {
-  box-shadow: 0 0 5px 2px #ffe9d5, 0 0 6px 3px #ebebeb;
+  box-shadow:
+    0 0 5px 2px #ffe9d5,
+    0 0 6px 3px #ebebeb;
 }
 
 .skills__title {
@@ -40,6 +42,11 @@
   display: flex;
   column-gap: 0.5rem;
   color: var(--title-color);
+
+  & .skills__icon {
+    color: var(--color-orange);
+    opacity: 0.8;
+  }
 }
 
 .skills__name {

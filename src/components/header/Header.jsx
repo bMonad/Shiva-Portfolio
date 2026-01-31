@@ -1,17 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import './header.css'
 import { Link, NavLink } from 'react-router-dom';
+import { route } from '../../constants/Route';
 
-const route = [
-  { name: "Home", link: "#home", icon: "uil uil-estate" },
-  { name: "About", link: "#about", icon: "uil uil-user" },
-  { name: "Skills", link: "#skills", icon: "uil uil-file-alt" },
-  { name: "Portfolio", link: "#portfolio", icon: "uil uil-briefcase-alt" },
-  { name: "Contact", link: "#contact", icon: "uil uil-message" },
-]
-
-const Header = ({ activeNav, setActiveNav }) => {
-
+const Header = ({ onNavClick }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [pageName, setPageName] = useState(true);
 
@@ -40,16 +32,22 @@ const Header = ({ activeNav, setActiveNav }) => {
   return (
     <header className="header">
       <nav className='nav container'>
-        <a href="#home" onClick={() => setActiveNav('#home')} className="nav__logo">Shivansh</a>
-
+        <Link to="/" onClick={onNavClick} className="nav__logo-div">
+          <img src="/src/assets/bMLogo-192.png" alt="logo" className="nav__logo-img" />
+          <span className="nav__logo">Shivansh</span>
+        </Link>
         <div className={`nav__menu ${toggleMenu ? "show__menu" : ""}`}>
           <ul className='nav__list grid'>
             {route.map((item, index) => (
               <li onClick={handleToggleMenu} key={index}>
-                <a href={item.link} onClick={() => setActiveNav(item.link)} className={`nav__link ${activeNav === item.link ? 'active-link' : ''}`}>
-                  <i className={`${item.icon} nav__icon`}></i>
-                  {pageName && item.name}
-                </a>
+                <NavLink to={item.link} className={({ isActive }) => `nav__link${isActive ? ' active-link' : ''}`} onClick={onNavClick}>
+                  {({ isActive }) => (
+                    <>
+                      <i className={`${item.icon} nav__icon ${isActive ? 'active-icon' : ''}`}></i>
+                      {pageName && item.name}
+                    </>
+                  )}
+                </NavLink>
               </li>
             ))}
           </ul>

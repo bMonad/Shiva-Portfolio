@@ -16,7 +16,7 @@ const SkillCard = () => {
                 {skills.map((skill, index) => {
                   return (
                     <div key={index} className='skills__data'>
-                      <skill.icon />
+                      <skill.icon className="skills__icon" />
 
                       <h3 className='skills__name'>{skill.name}</h3>
 

@@ -15,6 +15,17 @@
   column-gap: 1rem;
 }
 
+.nav__logo-div {
+  display: flex;
+  align-items: center;
+  column-gap: 0.3rem;
+}
+
+.nav__logo-img {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
 .nav__logo,
 .nav__toggle {
   color: var(--title-color);
@@ -40,6 +51,10 @@
 .nav__close,
 .nav__toggle {
   display: none;
+}
+
+.active-icon {
+  color: var(--color-orange) !important;
 }
 
 .active-link,
@@ -117,7 +132,9 @@
     &:hover {
       scale: 1.02;
       color: var(--title-color-dark);
-      box-shadow: 0 0 2px 2px #fff0e3, 0 0 6px 3px #fef4eb;
+      box-shadow:
+        0 0 2px 2px #fff0e3,
+        0 0 6px 3px #fef4eb;
       transition: 0.3s ease-in-out;
     }
 

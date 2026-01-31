@@ -1,0 +1,20 @@
+{
+  "name": "Shivansh Portfolio",
+  "short_name": "Portfolio",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "description": "Frontend Developer — portfolio of SHIVANSH SINGH",
+  "icons": [
+    {
+      "src": "/src/assets/bMLogo-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/src/assets/bMLogo-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 import './scrollup.css'
 import { useState, useEffect, useCallback } from "react";
-const ScrollUp = ({ setActiveNav }) => {
+const ScrollUp = () => {
   const [showScroll, setShowScroll] = useState(false);
 
   const handleScroll = useCallback(() => {
@@ -15,9 +15,8 @@ const ScrollUp = ({ setActiveNav }) => {
   }, [handleScroll]);
 
   const handleClick = useCallback(() => {
-    setActiveNav('#home');
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [setActiveNav]);
+  }, []);
 
   if (!showScroll) return null;
 

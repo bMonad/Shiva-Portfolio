@@ -15,11 +15,10 @@
 .about__tab {
   background: none;
   color: var(--text-color);
-  transition: border-color 0.3s;
 }
 .about__tab--active {
   color: var(--title-color);
-  border-bottom: 2px solid var(--border-color);
+  border-bottom: 2px solid var(--color-orange);
 
   & .about__icon {
     color: var(--title-color);

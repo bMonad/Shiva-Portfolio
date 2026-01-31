@@ -5,22 +5,21 @@ import Data from './Data'
 import ScrollDown from './ScrollDown'
 import SEO from '../SEO'
 
-const Home = ({ setActiveNav }) => {
+const Home = () => {
   return (
     <>
       <SEO
-        title="Home"
         description="Frontend Developer — portfolio of SHIVANSH SINGH"
         url="https://me-shivansh-singh.web.app/"
         image="https://me-shivansh-singh.web.app/default-og.png"
-        keywords="frontend developer, react, javascript, shivansh singh"
+        keywords="frontend developer, react, javascript, shivansh singh, bMonad"
       />
       <main className='home section' id='home'>
         <div className='home__container container grid'>
           <div className='home__content grid'>
             <Social />
             <div className='home__img' ></div>
-            <Data setActiveNav={setActiveNav} />
+            <Data />
           </div>
           <ScrollDown />
         </div>

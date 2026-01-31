@@ -33,7 +33,6 @@ const About = () => {
   return (
     <>
       <SEO
-        title="About Me"
         description="Frontend Developer — portfolio of SHIVANSH SINGH"
         url="https://me-shivansh-singh.web.app/"
         image="https://me-shivansh-singh.web.app/default-og.png"
@@ -52,7 +51,7 @@ const About = () => {
         <div className='about__container container'>
           <Info page={page} />
         </div>
-        <a download='' href={CV} className='button button--flex'>
+        <a download='Shivansh_Singh_Resume.pdf' href={CV} className='button button--flex'>
           Download CV
           <img src={Files} alt='Files' style={{ marginLeft: '0.1rem' }} />
         </a>

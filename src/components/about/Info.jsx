@@ -5,8 +5,8 @@ const Info = ({ page }) => {
   const data = page === 'experience' ? experienceConstant : educationConstant;
   return (
     <div className='about__section'>
-      {data.map((item) => (
-        <div key={item.role} className='about__item'>
+      {data.map((item, index) => (
+        <div key={index} className='about__item'>
           <div className='about__item-header'>
             <div className='about__header'>
               <img src={item.logo} alt={item.company} className='about__icon' />
