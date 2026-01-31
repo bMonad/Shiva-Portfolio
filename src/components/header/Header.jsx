@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './header.css'
 import { Link, NavLink } from 'react-router-dom';
 import { route } from '../../constants/Route';
+import logo from '../../assets/bMLogo-192.png';
 
 const Header = ({ onNavClick }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -33,7 +34,7 @@ const Header = ({ onNavClick }) => {
     <header className="header">
       <nav className='nav container'>
         <Link to="/" onClick={onNavClick} className="nav__logo-div">
-          <img src="/src/assets/bMLogo-192.png" alt="logo" className="nav__logo-img" />
+          <img src={logo} alt="logo" className="nav__logo-img" />
           <span className="nav__logo">Shivansh</span>
         </Link>
         <div className={`nav__menu ${toggleMenu ? "show__menu" : ""}`}>
