@@ -25,14 +25,14 @@ const Contact = () => {
   };
 
   return (
-    <>
+    <section id='contact'>
       <SEO
         description="Frontend Developer — portfolio of SHIVANSH SINGH"
         url="https://me-shivansh-singh.web.app/"
         image="https://me-shivansh-singh.web.app/default-og.png"
         keywords="frontend developer, react, javascript, shivansh singh"
       />
-      <section className='section' id='contact'>
+      <section className='section'>
         <h2 className='section__title'>Get in Touch</h2>
         <span className='section__subtitle'>Contact Me</span>
 
@@ -42,7 +42,7 @@ const Contact = () => {
               <div className='contact__card'>
                 <i className='uil uil-phone contact__icon'></i>
                 <h3 className='contact__card-title'>Phone</h3>
-                <span className='contact__card-subtitle'>+91 95695 92572</span>
+                <span className='contact__card-subtitle'>+91 XXXXX XXX72</span>
                 <a href='tel:+919569592572' className='contact__button'>
                   Call Now
                   <i className='uil uil-arrow-right contact__button-icon'> </i>
@@ -82,7 +82,7 @@ const Contact = () => {
           </div>
         </div>
       </section>
-    </>
+    </section>
   )
 }
 

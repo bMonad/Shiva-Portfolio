@@ -1,5 +1,5 @@
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useCallback } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import './App.css'
 import About from './components/about/About'
@@ -8,7 +8,7 @@ import Footer from './components/footer/Footer'
 import Header from './components/header/Header'
 import Home from './components/home/Home'
 import Portfolio from './components/project/Portfolio'
-import ScrollUp from './components/scrollup/ScrollUp'
+import ScrollUp from './components/scrollup/Scrollup'
 import Skills from './components/skills/Skills'
 import { route } from './constants/Route'
 
@@ -16,13 +16,8 @@ function App() {
   const location = useLocation();
   const navigate = useNavigate();
   const isNavClick = useRef(false);
-
-  const handleNavClick = () => {
-    isNavClick.current = true;
-    setTimeout(() => {
-      isNavClick.current = false;
-    }, 700);
-  };
+  const observerRef = useRef(null);
+  const previousSection = useRef(null);
 
   useEffect(() => {
     const sectionId = location.pathname === '/' ? 'home' : location.pathname.slice(1);
@@ -32,40 +27,54 @@ function App() {
     }
   }, [location.pathname]);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (isNavClick.current) return;
-      const scrollPosition = window.scrollY + window.innerHeight / 2;
-      let currentSection = route[0];
+  const handleNavClick = useCallback(() => {
+    isNavClick.current = true;
+    setTimeout(() => {
+      isNavClick.current = false;
+    }, 1000);
+  }, []);
 
-      for (let section of route) {
-        const el = document.getElementById(section.link.slice(1));
-        if (el) {
-          const { top, bottom } = el.getBoundingClientRect();
-          const elTop = window.scrollY + top;
-          const elBottom = window.scrollY + bottom;
-          if (scrollPosition >= elTop && scrollPosition < elBottom) {
-            currentSection = section;
-            break;
-          }
+  const handleIntersection = useCallback((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && !isNavClick.current) {
+        const sectionId = entry.target.id;
+        const path = sectionId === 'home' ? '/' : `/${sectionId}`;
+        
+        // Only update URL if section actually changed
+        if (previousSection.current !== path) {
+          previousSection.current = path;
+          navigate(path, { replace: true });
         }
       }
+    });
+  }, [navigate]);
 
-      if (location.pathname !== currentSection.link) {
-        navigate(currentSection.link, { replace: true });
+  useEffect(() => {
+    observerRef.current = new IntersectionObserver(handleIntersection, {
+      threshold: 0.7,
+    });
+
+    route.forEach((section) => {
+      const id = section.link.slice(1) || 'home';
+      const el = document.getElementById(id);
+      if (el) {
+        observerRef.current.observe(el);
+      }
+    });
+
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect();
       }
     };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [location.pathname, navigate]);
+  }, [handleIntersection]);
 
   return (
     <>
       <Header onNavClick={handleNavClick} />
 
       <main className='main'>
-        <Home />
+        <Home onNavClick={handleNavClick} />
         <About />
         <Skills />
         <Portfolio />

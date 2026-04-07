@@ -5,7 +5,7 @@ import Data from './Data'
 import ScrollDown from './ScrollDown'
 import SEO from '../SEO'
 
-const Home = () => {
+const Home = ({ onNavClick }) => {
   return (
     <>
       <SEO
@@ -19,7 +19,7 @@ const Home = () => {
           <div className='home__content grid'>
             <Social />
             <div className='home__img' ></div>
-            <Data />
+            <Data onNavClick={onNavClick} />
           </div>
           <ScrollDown />
         </div>
