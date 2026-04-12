@@ -39,8 +39,7 @@ function App() {
       if (entry.isIntersecting && !isNavClick.current) {
         const sectionId = entry.target.id;
         const path = sectionId === 'home' ? '/' : `/${sectionId}`;
-        
-        // Only update URL if section actually changed
+
         if (previousSection.current !== path) {
           previousSection.current = path;
           navigate(path, { replace: true });

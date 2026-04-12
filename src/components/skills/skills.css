@@ -9,13 +9,11 @@
   border: 1px solid var(--border-color);
   padding: 2rem 1.5rem;
   border-radius: 1.25rem;
-  /* box-shadow: 0 0 5px 2px #ffe9d5, 0 0 6px 3px #ebebeb; */
+  box-shadow: var(--box-shadow-color);
 }
 
 .skills__content:hover {
-  box-shadow:
-    0 0 5px 2px #ffe9d5,
-    0 0 6px 3px #ebebeb;
+  box-shadow: var(--box-shadow-hover-color);
 }
 
 .skills__title {

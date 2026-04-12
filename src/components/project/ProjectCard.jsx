@@ -2,14 +2,20 @@ import React from 'react'
 
 const ProjectCard = ({ index, category, toggleState, toggleTab }) => {
   const { title, icon, projects } = category;
+
+  const handleCloseModal = (e) => {
+    e.stopPropagation();
+    toggleTab(0);
+  }
+
   return (
-    <div key={index} className='portfolio__content'>
+    <div key={index} className='portfolio__content' onClick={() => toggleTab(projects[0].id)}>
       <div>
         <i className={` ${icon} portfolio__icon`}></i>
         <h3 className='portfolio__title'>{title}</h3>
       </div>
 
-      <span className='portfolio__button' onClick={() => toggleTab(projects[0].id)}>
+      <span className='portfolio__button'>
         View
         <i className='uil uil-arrow-right portfolio__button-icon'></i>
       </span>
@@ -19,7 +25,7 @@ const ProjectCard = ({ index, category, toggleState, toggleTab }) => {
         return (
           <div key={pIndex} className={`portfolio__modal ${toggleState === id ? 'active-modal' : ''}`}>
             <div className='portfolio__modal-content'>
-              <i className='uil uil-times portfolio__modal-close' onClick={() => toggleTab(0)}></i>
+              <i className='uil uil-times portfolio__modal-close' onClick={handleCloseModal}></i>
               <h3 className='portfolio__modal-title'>{title} Projects</h3>
               <p className='portfolio__modal-description'>Check out some of my projects related to {title}.</p>
 

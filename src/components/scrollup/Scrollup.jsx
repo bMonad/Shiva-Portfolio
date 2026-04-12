@@ -18,7 +18,6 @@ const ScrollUp = () => {
   }, [handleScroll]);
 
   const handleClick = useCallback(() => {
-    // Find the current section in view
     const scrollY = window.scrollY;
     let currentSectionIdx = 0;
 
@@ -27,20 +26,18 @@ const ScrollUp = () => {
       if (el) {
         const rect = el.getBoundingClientRect();
         const elTop = rect.top + window.scrollY;
-        if (scrollY >= elTop - 10) { // -10 for a small margin
+        if (scrollY >= elTop - 10) {
           currentSectionIdx = i;
         }
       }
     }
 
-    // Scroll to the previous section if possible
     if (currentSectionIdx > 0) {
       const prevSection = document.getElementById(sectionIds[currentSectionIdx - 1]);
       if (prevSection) {
         prevSection.scrollIntoView({ behavior: "smooth" });
       }
     } else {
-      // Already at the top section, scroll to top
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }, []);

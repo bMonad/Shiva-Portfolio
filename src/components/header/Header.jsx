@@ -3,10 +3,13 @@ import './header.css'
 import { Link, NavLink } from 'react-router-dom';
 import { route } from '../../constants/Route';
 import logo from '../../assets/bMLogo-192.png';
+import { BsSun, BsMoonStarsFill } from "react-icons/bs";
+import { useTheme } from '../hooks/ThemeContext.jsx';
 
 const Header = ({ onNavClick }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [pageName, setPageName] = useState(true);
+  const { lightTheme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleResize = () => {
@@ -33,10 +36,21 @@ const Header = ({ onNavClick }) => {
   return (
     <header className="header">
       <nav className='nav container'>
-        <Link to="/" onClick={onNavClick} className="nav__logo-div">
-          <img src={logo} alt="logo" className="nav__logo-img" />
-          <span className="nav__logo">Shivansh</span>
-        </Link>
+        <div className='nav__main'>
+          <Link to="/" onClick={onNavClick} className="nav__logo-div">
+            <img src={logo} alt="logo" className="nav__logo-img" />
+            <span className="nav__logo">Shivansh</span>
+          </Link>
+          <div className="nav__theme"
+            onClick={toggleTheme}
+          >
+            {lightTheme ? (
+              <BsMoonStarsFill className="nav__theme-icon" />
+            ) : (
+              <BsSun className="nav__theme-icon" />
+            )}
+          </div>
+        </div>
         <div className={`nav__menu ${toggleMenu ? "show__menu" : ""}`}>
           <ul className='nav__list grid'>
             {route.map((item, index) => (

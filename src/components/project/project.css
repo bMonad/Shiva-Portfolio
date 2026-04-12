@@ -10,11 +10,12 @@
   padding: 6rem 0 2rem 2.5rem;
   border: 1px solid var(--border-color);
   border-radius: 1.25rem;
+  cursor: pointer;
   transition: 0.3s;
 }
 
 .portfolio__content:hover {
-  box-shadow: 0 0 5px 2px #ffe9d5, 0 0 6px 3px #ebebeb;
+  box-shadow: var(--box-shadow-hover-color);
 }
 
 .portfolio__icon {
@@ -43,7 +44,7 @@
   transition: 0.3s;
 }
 
-.portfolio__button:hover .portfolio__button-icon {
+.portfolio__content:hover .portfolio__button-icon {
   transform: translateX(0.25rem);
 }
 
@@ -70,7 +71,7 @@
   width: 750px;
   padding: 2rem 1.5rem 3rem;
   border-radius: 1.5rem;
-  box-shadow: 0 0 5px 2px #ffe9d5;
+  box-shadow: var(--box-shadow-hover-color);
 }
 
 .portfolio__modal-close {
@@ -78,7 +79,7 @@
   top: 1.5rem;
   right: 1.5rem;
   font-size: 1.5rem;
-  color: var(--title-color);
+  color: var(--color-danger);
   cursor: pointer;
 }
 
@@ -134,15 +135,15 @@
 }
 
 .portfolio__modal-project-button {
-  background-color: var(--title-color);
-  color: var(--container-color);
+  background-color: var(--button-color);
+  color: var(--color-light);
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   font-size: var(--small-font-size);
   cursor: pointer;
 
   &:hover {
-    background-color: var(--title-color-dark);
+    background-color: var(--button-hover-color);
     scale: 1.02;
   }
 }
