@@ -3,7 +3,7 @@ import './header.css'
 import { Link, NavLink } from 'react-router-dom';
 import { route } from '../../constants/Route';
 import logo from '../../assets/bMLogo-192.png';
-import { BsSun, BsMoonStarsFill } from "react-icons/bs";
+import { BsSunFill, BsMoonStarsFill } from "react-icons/bs";
 import { useTheme } from '../hooks/ThemeContext.jsx';
 
 const Header = ({ onNavClick }) => {
@@ -47,7 +47,7 @@ const Header = ({ onNavClick }) => {
             {lightTheme ? (
               <BsMoonStarsFill className="nav__theme-icon" />
             ) : (
-              <BsSun className="nav__theme-icon" />
+              <BsSunFill className="nav__theme-icon" />
             )}
           </div>
         </div>

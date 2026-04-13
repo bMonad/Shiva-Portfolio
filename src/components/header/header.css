@@ -23,21 +23,19 @@
 
 .nav__theme {
   display: flex;
-  border: 1px solid var(--border-color);
-  border-radius: 20px;
-  padding: 0.1rem 0.3rem;
+  border-left: 1px solid var(--border-color);
+  padding: 0 0 0 0.4rem;
   cursor: pointer;
 
   &:hover {
     color: var(--title-color-dark);
-    box-shadow: var(--box-shadow-hover-color);
-    scale: 1.03;
+    scale: 1.02;
     transition: 0.3s ease-in-out;
   }
 }
 
 .nav__theme-icon {
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: var(--title-color);
 }
 
